@@ -1,0 +1,10 @@
+orbs:
+  cp-typescript-orb: econ/cp-typescript-orb@0.0.7
+
+version: 2.1 # using 2.1 provides access to orbs and other features
+
+workflows:
+  matrix-tests:
+    jobs:
+      - cp-typescript-orb/lint
+      - cp-typescript-orb/test
