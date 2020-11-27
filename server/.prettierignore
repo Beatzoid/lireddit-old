@@ -1,0 +1,4 @@
+# This is used to specify which files prettier should not format
+node_modules
+.yarn
+dist
