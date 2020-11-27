@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "12"
+  - "14"
+os:
+  - linux
+  - windows
+  - osx
+dist: trusty
+install:
+  - cd server
+  - yarn install --frozen-lockfile
+  - cd ..
+  - cd web
+  - yarn install --frozen-lockfile
+script:
+  - cd web
+  - yarn build
