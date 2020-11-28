@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import { EMAIL, EMAIL_PASSWORD } from "../constants";
+import { EMAIL, EMAIL_PASSWORD } from "../privateConstants";
 
 // async..await is not allowed in global scope, must use a wrapper
 export async function sendEmail(to: string, html: string) {
