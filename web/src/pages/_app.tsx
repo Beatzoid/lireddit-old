@@ -28,6 +28,14 @@ const client = createClient({
         cacheExchange({
             updates: {
                 Mutation: {
+                    logout: (_result, _, cache, __) => {
+                        betterUpdateQuery<LoginMutation, MeQuery>(
+                            cache,
+                            { query: MeDocument },
+                            _result,
+                            () => ({ me: null })
+                        );
+                    },
                     login: (_result, _, cache, __) => {
                         betterUpdateQuery<LoginMutation, MeQuery>(
                             cache,
@@ -82,4 +90,5 @@ function MyApp({ Component, pageProps }: any) {
     );
 }
 
+// noinspection JSUnusedGlobalSymbols
 export default MyApp;
