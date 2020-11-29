@@ -10,12 +10,12 @@ import {
 import { MyContext } from "../types";
 import { User } from "../entities/User";
 import argon2 from "argon2";
-import { EntityManager } from "@mikro-orm/postgresql";
 import { COOKIE_NAME, FORGET_PASSWORD_PREFIX } from "../constants";
 import { UsernamePasswordInput } from "./UsernamePasswordInput";
 import { validateRegister } from "../utils/validateRegister";
 import { sendEmail } from "../utils/sendEmail";
 import { v4 } from "uuid";
+import { getConnection } from "typeorm";
 
 @ObjectType()
 class FieldError {
@@ -41,7 +41,7 @@ export class UserResolver {
     async changePassword(
         @Arg("token") token: string,
         @Arg("newPassword") newPassword: string,
-        @Ctx() { redis, em, req }: MyContext
+        @Ctx() { redis, req }: MyContext
     ): Promise<UserResponse> {
         if (newPassword.length <= 3) {
             return {
@@ -69,7 +69,9 @@ export class UserResolver {
                 ]
             };
         }
-        const user = await em.findOne(User, { id: parseInt(userId) });
+
+        const userIdNum = parseInt(userId);
+        const user = await User.findOne(userIdNum);
 
         if (!user) {
             return {
@@ -82,8 +84,12 @@ export class UserResolver {
             };
         }
 
-        user.password = await argon2.hash(newPassword);
-        await em.persistAndFlush(user);
+        await User.update(
+            { id: userIdNum },
+            {
+                password: await argon2.hash(newPassword)
+            }
+        );
 
         await redis.del(key);
 
@@ -96,9 +102,9 @@ export class UserResolver {
     @Mutation(() => Boolean)
     async forgotPassword(
         @Arg("email") email: string,
-        @Ctx() { em, redis }: MyContext
+        @Ctx() { redis }: MyContext
     ) {
-        const user = await em.findOne(User, { email });
+        const user = await User.findOne({ where: { email } });
         if (!user) {
             // The email is not in the db
             return false;
@@ -122,22 +128,20 @@ export class UserResolver {
     }
 
     @Query(() => User, { nullable: true })
-    async me(@Ctx() { req, em }: MyContext) {
+    me(@Ctx() { req }: MyContext) {
         // You're not logged in
         if (!req.session.userId) {
             return null;
         }
 
-        // noinspection UnnecessaryLocalVariableJS
-        const user = await em.findOne(User, { id: req.session.userId });
-        return user;
+        return User.findOne(req.session.userId);
     }
 
     @Mutation(() => UserResponse)
     async register(
         // () => UsernamePasswordInput
         @Arg("options") options: UsernamePasswordInput,
-        @Ctx() { em, req }: MyContext
+        @Ctx() { req }: MyContext
     ): Promise<UserResponse> {
         const errors = validateRegister(options);
         if (errors) {
@@ -148,18 +152,18 @@ export class UserResolver {
         let user;
 
         try {
-            const result = await (em as EntityManager)
-                .createQueryBuilder(User)
-                .getKnexQuery()
-                .insert({
+            const result = await getConnection()
+                .createQueryBuilder()
+                .insert()
+                .into(User)
+                .values({
                     username: options.username.toLowerCase(),
                     email: options.email,
-                    password: hashedPassword,
-                    created_at: new Date(),
-                    updated_at: new Date()
+                    password: hashedPassword
                 })
-                .returning("*");
-            user = result[0];
+                .returning("*")
+                .execute();
+            user = result.raw[0];
         } catch (err) {
             // Duplicate username error
             // || err.detail.includes("already exists")
@@ -169,8 +173,12 @@ export class UserResolver {
                 return {
                     errors: [
                         {
-                            field: "username",
-                            message: "Username already exists"
+                            field: err.detail.includes("email")
+                                ? "email"
+                                : "username",
+                            message: err.detail.includes("email")
+                                ? "Email is in use already"
+                                : "Username is in use already"
                         }
                     ]
                 };
@@ -178,11 +186,11 @@ export class UserResolver {
         }
 
         // Prevents errors, don't remove
-        user = {
-            ...user,
-            createdAt: user.created_at,
-            updatedAt: user.updated_at
-        };
+        // user = {
+        //     ...user,
+        //     createdAt: user.created_at,
+        //     updatedAt: user.updated_at
+        // };
         req.session.userId = user.id;
 
         return { user };
@@ -192,15 +200,15 @@ export class UserResolver {
     async login(
         @Arg("usernameOrEmail") usernameOrEmail: string,
         @Arg("password") password: string,
-        @Ctx() { em, req }: MyContext
+        @Ctx() { req }: MyContext
     ): Promise<UserResponse> {
-        const user = await em.findOne(
-            User,
+        const user = await User.findOne(
             usernameOrEmail.includes("@")
                 ? {
-                      email: usernameOrEmail
+                      where: { email: usernameOrEmail }
                   }
-                : { username: usernameOrEmail }
+                  // toLowerCase() makes it so things like"Beatzoid" and "beatzoid" login to the same account
+                : { where: { username: usernameOrEmail.toLowerCase() } }
         );
 
         if (!user) {

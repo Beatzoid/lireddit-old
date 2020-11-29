@@ -1,6 +1,4 @@
 import "reflect-metadata";
-import { MikroORM } from "@mikro-orm/core";
-import microConfig from "./mikro-orm.config";
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
@@ -12,10 +10,21 @@ import session from "express-session";
 import connectRedis from "connect-redis";
 import { __prod__, COOKIE_NAME } from "./constants";
 import cors from "cors";
+import { createConnection } from "typeorm";
+import { Post } from "./entities/Post";
+import { User } from "./entities/User";
 
 const main = async () => {
-    const orm = await MikroORM.init(microConfig);
-    await orm.getMigrator().up();
+    // @ts-ignore
+    const conn = await createConnection({
+        type: "postgres",
+        database: "lireddit2",
+        username: "postgres",
+        password: "postgres",
+        logging: true,
+        synchronize: true,
+        entities: [Post, User]
+    });
 
     const app = express();
 
@@ -51,7 +60,6 @@ const main = async () => {
             validate: false
         }),
         context: ({ req, res }) => ({
-            em: orm.em,
             req,
             res,
             redis
@@ -67,7 +75,5 @@ const main = async () => {
         console.log("Server started on http://localhost:4000");
     });
 };
-
-// noinspection JSIgnoredPromiseFromCall
 
 main().catch(console.error);
