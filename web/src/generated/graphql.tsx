@@ -42,6 +42,7 @@ export type Post = {
   creatorId: Scalars['Float'];
   createdAt: Scalars['String'];
   updatedAt: Scalars['String'];
+  textSnippet: Scalars['String'];
 };
 
 export type User = {
@@ -240,7 +241,7 @@ export type PostsQuery = (
   { __typename?: 'Query' }
   & { posts: Array<(
     { __typename?: 'Post' }
-    & Pick<Post, 'id' | 'createdAt' | 'updatedAt' | 'title'>
+    & Pick<Post, 'id' | 'createdAt' | 'updatedAt' | 'title' | 'textSnippet'>
   )> }
 );
 
@@ -348,11 +349,12 @@ export function useMeQuery(options: Omit<Urql.UseQueryArgs<MeQueryVariables>, 'q
 };
 export const PostsDocument = gql`
     query Posts($limit: Int!, $cursor: String) {
-  posts(cursor: $cursor, limit: $limit) {
+  posts(limit: $limit, cursor: $cursor) {
     id
     createdAt
     updatedAt
     title
+    textSnippet
   }
 }
     `;

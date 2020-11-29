@@ -2,11 +2,13 @@ import {
     Arg,
     Ctx,
     Field,
+    FieldResolver,
     InputType,
     Int,
     Mutation,
     Query,
     Resolver,
+    Root,
     UseMiddleware
 } from "type-graphql";
 import { Post } from "../entities/Post";
@@ -23,8 +25,14 @@ class PostInput {
     text: string;
 }
 
-@Resolver()
+@Resolver(Post)
 export class PostResolver {
+    @FieldResolver(() => String)
+    textSnippet(@Root() post: Post) {
+        // The ".concat("...")" part makes it so that it adds "..." at the end of the sliced text
+        return post.text.slice(0, 50).concat("...");
+    }
+
     @Query(() => [Post])
     posts(
         @Arg("limit", () => Int) limit: number,
