@@ -1,3 +1,4 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/beatzoid/lireddit/badge)](https://www.codefactor.io/repository/github/beatzoid/lireddit)
 # LiReddit
 A Reddit clone made using
 - React
