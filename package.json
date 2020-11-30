@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "build": "cd web && yarn build"
+    "build": "cd web && yarn install --frozen-lockfile && yarn build"
   }
 }
