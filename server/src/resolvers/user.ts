@@ -2,10 +2,12 @@ import {
     Arg,
     Ctx,
     Field,
+    FieldResolver,
     Mutation,
     ObjectType,
     Query,
-    Resolver
+    Resolver,
+    Root
 } from "type-graphql";
 import { MyContext } from "../types";
 import { User } from "../entities/User";
@@ -35,8 +37,18 @@ class UserResponse {
     user?: User;
 }
 
-@Resolver()
+@Resolver(User)
 export class UserResolver {
+    @FieldResolver(() => String)
+    email(@Root() user: User, @Ctx() { req }: MyContext) {
+        // The current user wants to see their email
+        if (req.session.userId === user.id) {
+            return user.email;
+        }
+        // The current user wants to see someone else's email
+        return "";
+    }
+
     @Mutation(() => UserResponse)
     async changePassword(
         @Arg("token") token: string,
@@ -207,8 +219,8 @@ export class UserResolver {
                 ? {
                       where: { email: usernameOrEmail }
                   }
-                  // toLowerCase() makes it so things like"Beatzoid" and "beatzoid" login to the same account
-                : { where: { username: usernameOrEmail.toLowerCase() } }
+                : // toLowerCase() makes it so things like"Beatzoid" and "beatzoid" login to the same account
+                  { where: { username: usernameOrEmail.toLowerCase() } }
         );
 
         if (!user) {
