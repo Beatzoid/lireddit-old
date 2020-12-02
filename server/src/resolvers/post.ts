@@ -40,7 +40,9 @@ export class PostResolver {
     @FieldResolver(() => String)
     textSnippet(@Root() post: Post) {
         // The ".concat("...")" part makes it so that it adds "..." at the end of the sliced text
-        return post.text.slice(0, 50).concat("...");
+        return post.text.length < 50
+            ? post.text.slice(0, 50)
+            : post.text.slice(0, 50).concat("...");
     }
 
     @Mutation(() => Boolean)
