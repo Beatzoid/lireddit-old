@@ -1733,10 +1733,10 @@
   dependencies:
     "@types/node" "*"
 
-"@urql/core@>=1.15.2", "@urql/core@^1.15.1":
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/@urql/core/-/core-1.15.2.tgz#4f9726c73290f81baa95fab95b42b96af8f52718"
-  integrity sha512-DY0eOEPIOzNLjnVE+lXZpTxXpE94MxuZC75wC3wnDgW8q1ZMfHt7wKjk+5/Pi82MoF27fALwCUEKAm7Qfc8YIw==
+"@urql/core@>=1.15.2", "@urql/core@^1.16.0":
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/@urql/core/-/core-1.16.0.tgz#e83a2c9f744ae7804f79a4077f77701cf68b80f4"
+  integrity sha512-bGdxlVRm02q9jIj463jRNthM5haia1lccob1gXDUhpAWXJY58xYgnFPuv0pYf/MqsM67nizZRLhHgf84Knb9ZQ==
   dependencies:
     "@graphql-typed-document-node/core" "^3.1.0"
     wonka "^4.0.14"
@@ -7525,12 +7525,12 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-urql@^1.11.3:
-  version "1.11.3"
-  resolved "https://registry.yarnpkg.com/urql/-/urql-1.11.3.tgz#39c44f5753062b04553125070aae4d078d273c6d"
-  integrity sha512-LEzNd35RcjFfi6U5xl/9s+WRC325I0uGFJgW82JxwwTTT81OZNldeYQ621yejWH3AG0fEU/cWEXvh2cjqL3gGA==
+urql@^1.11.4:
+  version "1.11.4"
+  resolved "https://registry.yarnpkg.com/urql/-/urql-1.11.4.tgz#f4eb430d7756baf61f2906779d5a1914e9eeef0d"
+  integrity sha512-VtX8xuzwxDtVXRCf/uvy1LcAnBIfiDrKlkblq6ENVJtI3eNsq7mTTxk3F1kZCxE29GWBayQpO4kcLzhEE0OojQ==
   dependencies:
-    "@urql/core" "^1.15.1"
+    "@urql/core" "^1.16.0"
     wonka "^4.0.14"
 
 use-callback-ref@^1.2.1, use-callback-ref@^1.2.3:
