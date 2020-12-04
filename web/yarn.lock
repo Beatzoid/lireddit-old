@@ -1735,7 +1735,7 @@
   dependencies:
     "@types/node" "*"
 
-"@urql/core@>=1.15.2", "@urql/core@^1.16.0":
+"@urql/core@>=1.16.0", "@urql/core@^1.16.0":
   version "1.16.0"
   resolved "https://registry.yarnpkg.com/@urql/core/-/core-1.16.0.tgz#e83a2c9f744ae7804f79a4077f77701cf68b80f4"
   integrity sha512-bGdxlVRm02q9jIj463jRNthM5haia1lccob1gXDUhpAWXJY58xYgnFPuv0pYf/MqsM67nizZRLhHgf84Knb9ZQ==
@@ -1743,12 +1743,12 @@
     "@graphql-typed-document-node/core" "^3.1.0"
     wonka "^4.0.14"
 
-"@urql/exchange-graphcache@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@urql/exchange-graphcache/-/exchange-graphcache-3.2.0.tgz#f373b8521b4505ec973028e70320cb1b468b299d"
-  integrity sha512-AgiRbvDr+oqredzuKLmy7nzbU44sEI7gi9altoWfcbOJUkIpF803FAj/SNhOCnc3Y5NzXgKLmBqBt6ACnlA4SQ==
+"@urql/exchange-graphcache@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@urql/exchange-graphcache/-/exchange-graphcache-3.3.0.tgz#c8b5fd0c68c548003f92f41cbe354959da7d4659"
+  integrity sha512-iLp5ZuLT3iQK5YLA1KEy6WbcEQhIO32WayqwJkQ3fNOFuo0ArKADvFqVEC632PWoGcobq4vLGkm4JKq7DW8t1g==
   dependencies:
-    "@urql/core" ">=1.15.2"
+    "@urql/core" ">=1.16.0"
     wonka "^4.0.14"
 
 "@webassemblyjs/ast@1.9.0":
