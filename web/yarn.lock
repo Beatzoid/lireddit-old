@@ -1743,10 +1743,10 @@
     "@graphql-typed-document-node/core" "^3.1.0"
     wonka "^4.0.14"
 
-"@urql/exchange-graphcache@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@urql/exchange-graphcache/-/exchange-graphcache-3.3.0.tgz#c8b5fd0c68c548003f92f41cbe354959da7d4659"
-  integrity sha512-iLp5ZuLT3iQK5YLA1KEy6WbcEQhIO32WayqwJkQ3fNOFuo0ArKADvFqVEC632PWoGcobq4vLGkm4JKq7DW8t1g==
+"@urql/exchange-graphcache@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@urql/exchange-graphcache/-/exchange-graphcache-3.3.1.tgz#4bbe3708b1a41897de8cd05817ddaa61499e23a0"
+  integrity sha512-GrqwYICXguMCc0IbMsSPZHbiQ8/s0g0gURD56NTSZYrk2jj33OYuFIL6jcDJNysRkCmUQ/ZSX4pD5qYVboggcw==
   dependencies:
     "@urql/core" ">=1.16.0"
     wonka "^4.0.14"
