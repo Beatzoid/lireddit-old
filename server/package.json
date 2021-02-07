@@ -30,7 +30,7 @@
         "graphql": "github:graphql/graphql-js",
         "pg": "^8.5.1",
         "reflect-metadata": "github:rbuckton/reflect-metadata",
-        "type-graphql": "github:MichalLytek/type-graphql"
+        "type-graphql": "^1.1.1"
     },
     "devDependencies": {
         "@types/express": "^4.17.11",
