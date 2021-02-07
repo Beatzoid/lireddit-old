@@ -1,0 +1,27 @@
+{
+    "name": "lireddit-server",
+    "version": "1.0.0",
+    "description": "The server for Lireddit",
+    "main": "index.js",
+    "scripts": {
+        "watch": "tsc -w",
+        "build": "tsc ./src/**/*",
+        "dev": "nodemon dist/index.js",
+        "start": "node dist/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Beatzoid/lireddit.git"
+    },
+    "author": "Beatzoid",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Beatzoid/lireddit/issues"
+    },
+    "homepage": "https://github.com/Beatzoid/lireddit#readme",
+    "devDependencies": {
+        "@types/node": "^14.14.25",
+        "nodemon": "^2.0.7",
+        "typescript": "^4.1.3"
+    }
+}
