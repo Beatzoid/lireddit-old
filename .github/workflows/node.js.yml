@@ -30,3 +30,9 @@ jobs:
 
             - name: Compile Server Typescript
               run: cd server && tsc
+
+            - name: Install Client Dependencies
+              run: cd client && yarn install --frozen-lockfile
+
+            - name: Build Next.js Project
+              run: yarn build

@@ -1,12 +1,12 @@
 version: 2
 updates:
-    # - package-ecosystem: "npm"
-    #   directory: "/web"
-    #   schedule:
-    #       interval: "daily"
-    #   commit-message:
-    #       prefix: "⬆️"
-    #       include: "scope"
+    - package-ecosystem: "npm"
+      directory: "/client"
+      schedule:
+          interval: "daily"
+      commit-message:
+          prefix: "⬆️"
+          include: "scope"
 
     - package-ecosystem: "npm"
       directory: "/server"
