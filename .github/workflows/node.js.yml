@@ -35,4 +35,4 @@ jobs:
               run: cd client && yarn install --frozen-lockfile
 
             - name: Build Next.js Project
-              run: yarn build
+              run: cd client && yarn build
