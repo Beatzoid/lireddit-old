@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import { Session } from "express-session";
 
 interface MySession extends Session {
-    userId: number;
+    userId?: number;
 }
 
 export type MyContext = {
