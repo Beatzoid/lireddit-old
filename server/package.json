@@ -24,7 +24,7 @@
         "@mikro-orm/cli": "^4.4.2",
         "@mikro-orm/migrations": "^4.4.2",
         "@mikro-orm/postgresql": "^4.4.2",
-        "apollo-server-express": "^2.19.2",
+        "apollo-server-express": "^2.20.0",
         "argon2": "github:ranisalt/node-argon2",
         "connect-redis": "github:tj/connect-redis",
         "cors": "^2.8.5",
