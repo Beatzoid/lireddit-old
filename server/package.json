@@ -41,7 +41,7 @@
         "@types/cors": "^2.8.9",
         "@types/express": "^4.17.11",
         "@types/express-session": "^1.17.3",
-        "@types/node": "^14.14.26",
+        "@types/node": "^14.14.28",
         "@types/redis": "^2.8.28",
         "nodemon": "github:remy/nodemon",
         "ts-node": "github:TypeStrong/ts-node",
