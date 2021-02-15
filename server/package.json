@@ -23,7 +23,7 @@
     "dependencies": {
         "@mikro-orm/cli": "^4.4.2",
         "@mikro-orm/migrations": "^4.4.2",
-        "@mikro-orm/postgresql": "^4.4.2",
+        "@mikro-orm/postgresql": "^4.4.3",
         "apollo-server-express": "^2.21.0",
         "argon2": "github:ranisalt/node-argon2",
         "connect-redis": "github:tj/connect-redis",
