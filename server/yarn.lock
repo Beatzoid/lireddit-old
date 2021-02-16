@@ -48,15 +48,15 @@
     http-errors "^1.7.3"
     object-path "^0.11.4"
 
-"@mikro-orm/cli@^4.4.2":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@mikro-orm/cli/-/cli-4.4.2.tgz#2757e62f4bfb08c2a3614cedd07ee819f65dde3d"
-  integrity sha512-rWLEkV7uLXnMtVYQDx5pT9oRvRsZL5zzD9h/Ihw9Rdkp3W/EBLrG/XDf6b6mV/tOzn9EeNEthIFnMZiZFUatiQ==
+"@mikro-orm/cli@^4.4.3":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@mikro-orm/cli/-/cli-4.4.3.tgz#aa4deb429faeeeaf1d2d17bb47dd6cf6cb5a0a95"
+  integrity sha512-C/ZGO8omjzSoHxXV5r+F/RuGe4AHwXZSb1avKAtZe4tTA4tafRTfrovqMyCO0aOsNKD9JzG40Eq6NVdq7wLCew==
   dependencies:
-    "@mikro-orm/core" "^4.4.2"
-    "@mikro-orm/entity-generator" "^4.4.2"
-    "@mikro-orm/knex" "^4.4.2"
-    "@mikro-orm/migrations" "^4.4.2"
+    "@mikro-orm/core" "^4.4.3"
+    "@mikro-orm/entity-generator" "^4.4.3"
+    "@mikro-orm/knex" "^4.4.3"
+    "@mikro-orm/migrations" "^4.4.3"
     ansi-colors "4.1.1"
     cli-table3 "0.6.0"
     fs-extra "9.1.0"
@@ -64,10 +64,10 @@
     yargonaut "1.1.4"
     yargs "15.4.1"
 
-"@mikro-orm/core@^4.4.2":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@mikro-orm/core/-/core-4.4.2.tgz#9191e2c0e24368a21cd4866f17ff0e3ac018af18"
-  integrity sha512-aoX3Wglu3Ak6O4KAmXzv3mqX6i48m8OkL+T5HOdttDnOu4nBL2KprQCRj2DvMhhduKpVX0gKjQ7zieZHD4j6fQ==
+"@mikro-orm/core@^4.4.3":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@mikro-orm/core/-/core-4.4.3.tgz#68333da6b9edcbc35d6cbf9b140329da34669208"
+  integrity sha512-pS1Gg24SkrxCcnmEOJaGMmJnlb2FpNSloO7N8BqYVd4ToXO1Scao4Bld2PxDvQgPdvRo6MpIJjKXYnCLkIq6oA==
   dependencies:
     ansi-colors "4.1.1"
     clone "2.1.2"
@@ -77,15 +77,15 @@
     reflect-metadata "0.1.13"
     strip-json-comments "3.1.1"
 
-"@mikro-orm/entity-generator@^4.4.2":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@mikro-orm/entity-generator/-/entity-generator-4.4.2.tgz#a61fcdf9d6226664c1de418070e74aa9474f5736"
-  integrity sha512-yVjbJ8LsA1Kiqab0KDbH17VIHaos0hgmT/gQYEYiqnRJd7Na5KmL8/Bb0Pw0M4qW4hI7h89RNjFWhW5PUkDOaQ==
+"@mikro-orm/entity-generator@^4.4.3":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@mikro-orm/entity-generator/-/entity-generator-4.4.3.tgz#78ee7e6d38feb2852e0559e22646659cbeabf766"
+  integrity sha512-iW4dIRLRAaBRYTgIKN8paNd+joCAHhw9zKR0n7eL8cCDXdfLbRjts7WZdP8CJVQRvLgzZibeM8ia0rRMwBt8jQ==
   dependencies:
-    "@mikro-orm/knex" "^4.4.2"
+    "@mikro-orm/knex" "^4.4.3"
     fs-extra "9.1.0"
 
-"@mikro-orm/knex@^4.4.2", "@mikro-orm/knex@^4.4.3":
+"@mikro-orm/knex@^4.4.3":
   version "4.4.3"
   resolved "https://registry.yarnpkg.com/@mikro-orm/knex/-/knex-4.4.3.tgz#b041c878c5e4e371ba0e5b015faba4699ad4838a"
   integrity sha512-7KRyAmUjd7Arlw8i8mz6jGicT0z51zYWPNi7UPYa10fALi1Kd/JupdK0F0L0zm96CMN/LGX7i0Ev+tPfvgxCyA==
@@ -94,12 +94,12 @@
     knex "0.21.17"
     sqlstring "2.3.2"
 
-"@mikro-orm/migrations@^4.4.2":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@mikro-orm/migrations/-/migrations-4.4.2.tgz#9b5da7ededbdaff75f0c1dd8985229e880978c11"
-  integrity sha512-MSlAzjvj5BJnTlkU/09+U83MVwt+T2Sq4BJAcHLXdo9mEwr+71S8eL/0uzJgpXpnkwP/M6e+hsGI8TG69e0P/g==
+"@mikro-orm/migrations@^4.4.2", "@mikro-orm/migrations@^4.4.3":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@mikro-orm/migrations/-/migrations-4.4.3.tgz#0d59f538da7fa41b000527e3a2523dae3cc66e05"
+  integrity sha512-uRPwPoruZ40G/J1cFYFOZnnhmL3+kiHZFkVBujfjvqRGEpO8AnRHgae7hIswRMG0BeIL9R469lqQyOv3eERMSw==
   dependencies:
-    "@mikro-orm/knex" "^4.4.2"
+    "@mikro-orm/knex" "^4.4.3"
     "@types/umzug" "2.3.0"
     fs-extra "9.1.0"
     umzug "2.3.0"
@@ -3225,12 +3225,7 @@ redis-parser@^3.0.0:
     redis-errors "^1.2.0"
     redis-parser "^3.0.0"
 
-reflect-metadata@0.1.13:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
-  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
-
-"reflect-metadata@github:rbuckton/reflect-metadata":
+reflect-metadata@0.1.13, "reflect-metadata@github:rbuckton/reflect-metadata":
   version "0.1.13"
   resolved "https://codeload.github.com/rbuckton/reflect-metadata/tar.gz/3aeb98af4030be664a66f49bfd164936e0ba1825"
 
