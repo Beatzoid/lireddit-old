@@ -3779,8 +3779,8 @@ ts-invariant@^0.4.0:
 
 "ts-node@github:TypeStrong/ts-node":
   version "9.1.1"
-  uid "87399c4777abfb9db913b1d356b8aa25cb98d585"
-  resolved "https://codeload.github.com/TypeStrong/ts-node/tar.gz/87399c4777abfb9db913b1d356b8aa25cb98d585"
+  uid "99aa4dcfe1c1f449348e96658ae2453d47a647f3"
+  resolved "https://codeload.github.com/TypeStrong/ts-node/tar.gz/99aa4dcfe1c1f449348e96658ae2453d47a647f3"
   dependencies:
     arg "^4.1.0"
     create-require "^1.1.0"
