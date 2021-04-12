@@ -2706,7 +2706,8 @@ node-pre-gyp@^0.17.0:
 
 "nodemon@github:remy/nodemon":
   version "0.0.0-development"
-  resolved "https://codeload.github.com/remy/nodemon/tar.gz/b88d3576a552eb25e3176a3765dc23a11d8e151b"
+  uid d33f5f449f678c5481e1e9d5cec59aa679802b25
+  resolved "https://codeload.github.com/remy/nodemon/tar.gz/d33f5f449f678c5481e1e9d5cec59aa679802b25"
   dependencies:
     chokidar "^3.2.2"
     debug "^3.2.6"
