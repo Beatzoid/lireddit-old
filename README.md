@@ -6,7 +6,7 @@ A Reddit clone made using several different technologies
 
 Once I finish the app
 
-# Running
+# Running Locally
 
 Once I finish the app I'll update this
 
