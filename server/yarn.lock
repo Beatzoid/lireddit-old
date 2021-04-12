@@ -1139,8 +1139,8 @@ configstore@^5.0.1:
 
 "connect-redis@github:tj/connect-redis":
   version "5.1.0"
-  uid "789176cba8f9e84586ebe0c74eb9c96fb37fc518"
-  resolved "https://codeload.github.com/tj/connect-redis/tar.gz/789176cba8f9e84586ebe0c74eb9c96fb37fc518"
+  uid "736bdc6288d59ede6274bbd4a85a0de23f96a2aa"
+  resolved "https://codeload.github.com/tj/connect-redis/tar.gz/736bdc6288d59ede6274bbd4a85a0de23f96a2aa"
 
 console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
