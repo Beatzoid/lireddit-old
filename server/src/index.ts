@@ -8,8 +8,8 @@ import { __PROD__ } from "./constants";
 import microConfig from "./mikro-orm.config";
 
 // Resolvers
-import { HelloResolver } from "./resolvers/Hello";
-import { PostResolver } from "./resolvers/Post";
+import { HelloResolver } from "./resolvers/hello";
+import { PostResolver } from "./resolvers/post";
 
 const main = async () => {
     const orm = await MikroORM.init(microConfig);
