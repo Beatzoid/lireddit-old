@@ -2,6 +2,7 @@
     "extends": ["config:base"],
     "labels": ["dependencies"],
     "commitMessagePrefix": "⬆",
+    "rangeStrategy": "replace",
     "prConcurrentLimit": 0,
     "prHourlyLimit": 0
 }
