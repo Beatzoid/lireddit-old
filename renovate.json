@@ -1,4 +1,7 @@
 {
+    "extends": ["config:base"],
     "labels": ["dependencies"],
-    "commitMessagePrefix": "⬆"
+    "commitMessagePrefix": "⬆",
+    "prConcurrentLimit": 0,
+    "prHourlyLimit": 0
 }
