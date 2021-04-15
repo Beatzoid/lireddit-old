@@ -658,6 +658,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/nodemailer@npm:^6.4.1":
+  version: 6.4.1
+  resolution: "@types/nodemailer@npm:6.4.1"
+  dependencies:
+    "@types/node": "*"
+  checksum: 58239d1996c0f7f5f7a9373e575e1889c7757af30064803efc2032f87d4be7a62cb87df401b8ed060f919af9606bbb7470450a44b46a53ff12041e7fac8acb8a
+  languageName: node
+  linkType: hard
+
 "@types/qs@npm:*":
   version: 6.9.6
   resolution: "@types/qs@npm:6.9.6"
@@ -1969,7 +1978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:8.2.0":
+"dotenv@npm:8.2.0, dotenv@npm:^8.2.0":
   version: 8.2.0
   resolution: "dotenv@npm:8.2.0"
   checksum: ad4c8e0df3e24b4811c8e93377d048a10a9b213dcd9f062483b4a2d3168f08f10ec9c618c23f5639060d230ccdb174c08761479e9baa29610aa978e1ee66df76
@@ -3531,14 +3540,17 @@ fsevents@~2.3.1:
     "@types/express": ^4.17.11
     "@types/express-session": ^1.17.3
     "@types/node": ^14.14.37
+    "@types/nodemailer": ^6.4.1
     "@types/redis": ^2.8.28
     apollo-server-express: ^2.22.2
     argon2: ^0.27.2
     connect-redis: ^5.1.0
     cors: ^2.8.5
+    dotenv: ^8.2.0
     express: ^4.17.1
     express-session: ^1.17.1
     graphql: ^15.5.0
+    nodemailer: ^6.5.0
     nodemon: ^2.0.7
     pg: ^8.5.1
     redis: ^3.1.1
@@ -3963,6 +3975,13 @@ fsevents@~2.3.1:
   bin:
     node-gyp: bin/node-gyp.js
   checksum: 4fbd99af8a0ac1e0c834a693392d23696e945e604ede111c528eb8d4761dfb22492dbd33c4e3730b8aab99a9f156e9e6418ce489f88cbbfc51e0e00eadd51bc8
+  languageName: node
+  linkType: hard
+
+"nodemailer@npm:^6.5.0":
+  version: 6.5.0
+  resolution: "nodemailer@npm:6.5.0"
+  checksum: d2c68235ee1dbe07642ae3a5a0ae9ca06b24b87ba080000e22275ee89c1730d1c8905ad441efb26ef0402557c8f267a8e447738a6a152a7ad71b558b64ae8d0c
   languageName: node
   linkType: hard
 

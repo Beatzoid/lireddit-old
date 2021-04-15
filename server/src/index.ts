@@ -1,3 +1,4 @@
+require("dotenv").config();
 import "reflect-metadata";
 import { MikroORM } from "@mikro-orm/core";
 import express from "express";
@@ -42,8 +43,7 @@ const main = async () => {
                 secure: __PROD__ // Cookie only works in https
             },
             saveUninitialized: false,
-            secret:
-                "t>2m)2zjk!U2AAwxhVTK@W8d5h4}QN:2~My:y,uQ(:Z{(;dRMjk@GR'kdneC^:T",
+            secret: process.env.COOKIE_SECRET as string,
             resave: false
         })
     );
