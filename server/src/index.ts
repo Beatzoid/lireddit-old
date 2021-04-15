@@ -8,7 +8,7 @@ import session from "express-session";
 import connectRedis from "connect-redis";
 import cors from "cors";
 
-import { __PROD__ } from "./constants";
+import { COOKIE_NAME, __PROD__ } from "./constants";
 import microConfig from "./mikro-orm.config";
 
 // Resolvers
@@ -30,7 +30,7 @@ const main = async () => {
 
     app.use(
         session({
-            name: "qid",
+            name: COOKIE_NAME,
             store: new RedisStore({
                 client: redisClient,
                 disableTouch: true // Reduces pings to redis
