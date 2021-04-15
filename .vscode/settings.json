@@ -9,5 +9,6 @@
         "**/.yarn": true,
         "**/yarn.lock": true,
         "**/dist": true
-    }
+    },
+    "discord.enabled": true
 }

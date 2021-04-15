@@ -2462,7 +2462,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@urql/core@npm:^2.0.0":
+"@urql/core@npm:>=2.0.0, @urql/core@npm:^2.0.0":
   version: 2.0.0
   resolution: "@urql/core@npm:2.0.0"
   dependencies:
@@ -2471,6 +2471,18 @@ __metadata:
   peerDependencies:
     graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
   checksum: 16376721bd473385b0a7ba8c142ceb589cb0ff0247b6a5572e773217d574f47938d32b018d9e9d1aa1eed88d070cdbb50c01b250c7a47ba08775f9cf0b2c48b6
+  languageName: node
+  linkType: hard
+
+"@urql/exchange-graphcache@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@urql/exchange-graphcache@npm:4.0.0"
+  dependencies:
+    "@urql/core": ">=2.0.0"
+    wonka: ^4.0.14
+  peerDependencies:
+    graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+  checksum: 7c478dcd535f1d806f9f9b041122a2db94b82e7b7d8bdb7f519b7a1c75ffcacaf6ea5082aba34775653c3ff61255a3467e15d3a1616ecd49fa5f3820f87a55a2
   languageName: node
   linkType: hard
 
@@ -8297,6 +8309,7 @@ typescript@^4.2.4:
     "@graphql-codegen/typescript": 1.21.1
     "@graphql-codegen/typescript-operations": 1.17.15
     "@graphql-codegen/typescript-urql": ^2.0.5
+    "@urql/exchange-graphcache": ^4.0.0
     formik: ^2.2.6
     framer-motion: ^4.1.3
     graphql: ^15.5.0
