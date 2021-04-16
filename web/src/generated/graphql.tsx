@@ -91,6 +91,11 @@ export type Query = {
     me?: Maybe<User>;
 };
 
+export type QueryPostsArgs = {
+    cursor?: Maybe<Scalars["String"]>;
+    limit: Scalars["Int"];
+};
+
 export type QueryPostArgs = {
     id: Scalars["Float"];
 };
@@ -198,7 +203,10 @@ export type MeQuery = { __typename?: "Query" } & {
     me?: Maybe<{ __typename?: "User" } & RegularUserFragment>;
 };
 
-export type PostsQueryVariables = Exact<{ [key: string]: never }>;
+export type PostsQueryVariables = Exact<{
+    limit: Scalars["Int"];
+    cursor?: Maybe<Scalars["String"]>;
+}>;
 
 export type PostsQuery = { __typename?: "Query" } & {
     posts: Array<
@@ -333,8 +341,8 @@ export function useMeQuery(
     return Urql.useQuery<MeQuery>({ query: MeDocument, ...options });
 }
 export const PostsDocument = gql`
-    query Posts {
-        posts {
+    query Posts($limit: Int!, $cursor: String) {
+        posts(cursor: $cursor, limit: $limit) {
             id
             title
             createdAt
