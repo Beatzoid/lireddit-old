@@ -8,6 +8,7 @@ import session from "express-session";
 import connectRedis from "connect-redis";
 import cors from "cors";
 import { createConnection } from "typeorm";
+import path from "path";
 
 import { COOKIE_NAME, __PROD__ } from "./constants";
 
@@ -21,15 +22,17 @@ import { User } from "./entities/User";
 import { Post } from "./entities/Post";
 
 const main = async () => {
-    await createConnection({
+    const conn = await createConnection({
         type: "postgres",
         database: "lireddit2",
         username: "beatzoid",
         password: "beatzoid",
         logging: !__PROD__,
         synchronize: true,
+        migrations: [path.join(__dirname, "./migrations/*")],
         entities: [Post, User]
     });
+    await conn.runMigrations();
 
     const app = express();
 
