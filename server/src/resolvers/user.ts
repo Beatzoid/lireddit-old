@@ -1,5 +1,3 @@
-import { User } from "../entities/User";
-import { MyContext } from "../types";
 import {
     Arg,
     Ctx,
@@ -10,10 +8,15 @@ import {
     Resolver
 } from "type-graphql";
 import argon2 from "argon2";
+import { v4 } from "uuid";
+
+import { User } from "../entities/User";
+import { MyContext } from "../types";
 import { EntityManager } from "@mikro-orm/postgresql";
-import { COOKIE_NAME, EMAIL_REGEX } from "../constants";
+import { COOKIE_NAME, EMAIL_REGEX, FORGOT_PASSWORD_PREFIX } from "../constants";
 import { UsernamePasswordInput } from "../utils/UsernamePasswordInput";
 import { validateRegister } from "../utils/validateRegister";
+import { sendEmail } from "../utils/sendEmail";
 
 @ObjectType()
 class FieldError {
@@ -35,12 +38,84 @@ class UserResponse {
 
 @Resolver()
 export class UserResolver {
+    @Mutation(() => UserResponse)
+    async changePassword(
+        @Arg("token") token: string,
+        @Arg("newPassword") newPassword: string,
+        @Ctx() { em, redis, req }: MyContext
+    ): Promise<UserResponse> {
+        if (newPassword.length <= 2) {
+            return {
+                errors: [
+                    {
+                        field: "newPassword",
+                        message: "Password length must be greater than 2"
+                    }
+                ]
+            };
+        }
+
+        const key = FORGOT_PASSWORD_PREFIX + token;
+
+        const userId = await redis.get(key);
+        if (!userId) {
+            return {
+                errors: [
+                    {
+                        field: "token",
+                        message: "Invalid token"
+                    }
+                ]
+            };
+        }
+
+        const user = await em.findOne(User, { id: parseInt(userId) });
+        if (!user) {
+            return {
+                errors: [
+                    {
+                        field: "token",
+                        message: "User no longer exists"
+                    }
+                ]
+            };
+        }
+
+        user.password = await argon2.hash(newPassword, {
+            hashLength: 128
+        });
+        await em.persistAndFlush(user);
+
+        redis.del(key);
+
+        // Login user after change password
+        req.session.userId = user.id;
+
+        return { user };
+    }
+
     @Mutation(() => Boolean)
     async forgotPassword(
         @Arg("email") email: string,
-        @Ctx() { req, em }: MyContext
+        @Ctx() { em, redis }: MyContext
     ) {
         const user = await em.findOne(User, { email });
+        if (!user) return true;
+
+        const token = v4();
+
+        await redis.set(
+            FORGOT_PASSWORD_PREFIX + token,
+            user.id,
+            "ex",
+            1000 * 60 * 60 * 24 * 3 // 3 days
+        );
+
+        await sendEmail(
+            email,
+            "Reset Lireddit Account Password",
+            `<a href="http://localhost:3000/change-password/${token}">Reset Password</a>`
+        );
         return true;
     }
 
@@ -81,6 +156,16 @@ export class UserResolver {
             user = result[0];
         } catch (err) {
             if (err.code === "23505") {
+                if (err.detail.includes("email")) {
+                    return {
+                        errors: [
+                            {
+                                field: "email",
+                                message: "Email already in use"
+                            }
+                        ]
+                    };
+                }
                 return {
                     errors: [
                         { field: "username", message: "Username already taken" }
@@ -103,7 +188,7 @@ export class UserResolver {
     ): Promise<UserResponse> {
         const user = await em.findOne(
             User,
-            !EMAIL_REGEX.test(usernameOrEmail)
+            EMAIL_REGEX.test(usernameOrEmail)
                 ? { email: usernameOrEmail }
                 : { username: usernameOrEmail }
         );
