@@ -4,11 +4,14 @@ import {
     Arg,
     Ctx,
     Field,
+    FieldResolver,
     InputType,
     Int,
     Mutation,
+    ObjectType,
     Query,
     Resolver,
+    Root,
     UseMiddleware
 } from "type-graphql";
 
@@ -24,20 +27,40 @@ class PostInput {
     text: string;
 }
 
-@Resolver()
+@ObjectType()
+class PaginatedPosts {
+    @Field(() => [Post])
+    posts: Post[];
+
+    @Field()
+    hasMore: boolean;
+}
+
+@Resolver(Post)
 export class PostResolver {
-    @Query(() => [Post])
-    posts(
+    @FieldResolver(() => String)
+    textSnippet(@Root() root: Post) {
+        if (root.text.length <= 50) return root.text;
+        // Slice the text to 50 characters
+        root.text = root.text.substring(0, 50);
+        // Slice the text at the last occurrence of a space
+        // This prevents slicing words in half
+        // Then add a "..." at the end
+        return root.text.substring(0, root.text.lastIndexOf(" ")) + "...";
+    }
+
+    @Query(() => PaginatedPosts)
+    async posts(
         @Arg("limit", () => Int) limit: number,
         @Arg("cursor", () => String, { nullable: true }) cursor: string | null
-    ): Promise<Post[]> {
+    ): Promise<PaginatedPosts> {
         const realLimit = Math.min(50, limit);
 
         const qb = getConnection()
             .getRepository(Post)
             .createQueryBuilder("p")
             .orderBy('"createdAt"', "DESC")
-            .take(realLimit);
+            .take(realLimit + 1);
 
         if (cursor) {
             qb.where('"createdAt" < :cursor', {
@@ -45,7 +68,12 @@ export class PostResolver {
             });
         }
 
-        return qb.getMany();
+        const posts = await qb.getMany();
+
+        return {
+            posts: posts.slice(0, realLimit),
+            hasMore: posts.length === realLimit + 1
+        };
     }
 
     @Query(() => Post, { nullable: true })
