@@ -4258,6 +4258,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"focus-visible@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "focus-visible@npm:5.2.0"
+  checksum: 876f646ef453680d3d34e9f9b23961527ffd5ccaed8690f423d4fbfa37ff023d98a490972bc1387850e37ec2e44958c81f6096ef95b67462e5c4b5404cf1dbb9
+  languageName: node
+  linkType: hard
+
 "foreach@npm:^2.0.5":
   version: 2.0.5
   resolution: "foreach@npm:2.0.5"
@@ -8338,6 +8345,7 @@ typescript@^4.2.4:
     "@graphql-codegen/typescript-operations": 1.17.15
     "@graphql-codegen/typescript-urql": ^2.0.5
     "@urql/exchange-graphcache": ^4.0.0
+    focus-visible: ^5.2.0
     formik: ^2.2.6
     framer-motion: ^4.1.3
     graphql: ^15.5.0
