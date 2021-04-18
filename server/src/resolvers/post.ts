@@ -17,7 +17,6 @@ import {
 
 import { Post } from "../entities/Post";
 import { getConnection } from "typeorm";
-import { Updoot } from "../entities/Updoot";
 
 @InputType()
 class PostInput {
@@ -61,11 +60,6 @@ export class PostResolver {
         const realValue = isUpdoot ? 1 : -1;
         const { userId } = req.session;
 
-        // await Updoot.insert({
-        //     userId,
-        //     postId,
-        //     value: realValue
-        // });
         await getConnection().query(
             `
             start transaction;
