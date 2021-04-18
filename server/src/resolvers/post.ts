@@ -17,6 +17,7 @@ import {
 
 import { Post } from "../entities/Post";
 import { getConnection } from "typeorm";
+import { Updoot } from "../entities/Updoot";
 
 @InputType()
 class PostInput {
@@ -47,6 +48,36 @@ export class PostResolver {
         // This prevents slicing words in half
         // Then add a "..." at the end
         return root.text.substring(0, root.text.lastIndexOf(" ")) + "...";
+    }
+
+    @Mutation(() => Boolean)
+    @UseMiddleware(isAuth)
+    async vote(
+        @Arg("postId", () => Int) postId: number,
+        @Arg("value", () => Int) value: number,
+        @Ctx() { req }: MyContext
+    ) {
+        const isUpdoot = value !== -1;
+        const realValue = isUpdoot ? 1 : -1;
+        const { userId } = req.session;
+
+        // await Updoot.insert({
+        //     userId,
+        //     postId,
+        //     value: realValue
+        // });
+        await getConnection().query(
+            `
+            start transaction;
+            insert into updoot ("userId", "postId", value)
+            values (${userId}, ${postId}, ${realValue});
+            update post
+            set points = points + ${realValue}
+            where id = ${postId};
+            commit;
+        `
+        );
+        return true;
     }
 
     @Query(() => PaginatedPosts)
