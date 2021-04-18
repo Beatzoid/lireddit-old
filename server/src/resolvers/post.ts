@@ -116,10 +116,16 @@ export class PostResolver {
         @Ctx() { req }: MyContext
     ): Promise<PaginatedPosts> {
         const realLimit = Math.min(50, limit);
-        const replacements: any[] = [realLimit + 1, req.session.userId];
+        const replacements: any[] = [realLimit + 1];
 
+        if (req.session.userId) {
+            replacements.push(req.session.userId);
+        }
+
+        let cursorIndex = 3;
         if (cursor) {
             replacements.push(new Date(parseInt(cursor)));
+            cursorIndex = replacements.length;
         }
 
         const posts = await getConnection().query(
@@ -137,7 +143,7 @@ export class PostResolver {
             }
             from post p
             inner join public.user u on u.id = p."creatorId"
-            ${cursor ? `where p."createdAt" < $3` : ""}
+            ${cursor ? `where p."createdAt" < $${cursorIndex}` : ""}
             order by p."createdAt" DESC
             limit $1
         `,
