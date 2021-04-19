@@ -13,9 +13,7 @@ import NextLink from "next/link";
 
 import { Layout } from "../components/Layout";
 import {
-    useMeQuery,
-    usePostsQuery,
-    useUpdatePostMutation
+    usePostsQuery
 } from "../generated/graphql";
 import { createUrqlClient } from "../utils/createUrqlClient";
 import { UpdootSection } from "../components/UpdootSection";
@@ -30,7 +28,6 @@ const Index = () => {
     const [{ data, fetching }] = usePostsQuery({
         variables
     });
-    const [, editPost] = useUpdatePostMutation();
 
     if (!fetching && !data) {
         return <div>Query failed, please try again later</div>;
