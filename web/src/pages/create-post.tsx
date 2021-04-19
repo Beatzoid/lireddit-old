@@ -7,6 +7,7 @@ import { InputField } from "../components/InputField";
 import { Layout } from "../components/Layout";
 import { useCreatePostMutation } from "../generated/graphql";
 import { createUrqlClient } from "../utils/createUrqlClient";
+import { toErrorMap } from "../utils/toErrorMap";
 import { useIsAuth } from "../utils/useIsAuth";
 
 const CreatePost: React.FC<{}> = ({}) => {
@@ -18,9 +19,12 @@ const CreatePost: React.FC<{}> = ({}) => {
         <Layout variant="small">
             <Formik
                 initialValues={{ title: "", text: "" }}
-                onSubmit={async (values) => {
-                    const { error } = await createPost({ options: values });
-                    if (!error) {
+                onSubmit={async (values, { setErrors }) => {
+                    const res = await createPost({ options: values });
+                    if (res.data?.createPost.errors) {
+                        const errorMap = toErrorMap(res.data.createPost.errors);
+                        setErrors(errorMap);
+                    } else if (res.data?.createPost.post) {
                         router.push("/");
                     }
                 }}

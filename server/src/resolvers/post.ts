@@ -29,6 +29,24 @@ class PostInput {
 }
 
 @ObjectType()
+class PostFieldError {
+    @Field()
+    field: string;
+
+    @Field()
+    message: string;
+}
+
+@ObjectType()
+class PostResponse {
+    @Field(() => [PostFieldError], { nullable: true })
+    errors?: PostFieldError[];
+
+    @Field(() => Post, { nullable: true })
+    post?: Post | Promise<Post>;
+}
+
+@ObjectType()
 class PaginatedPosts {
     @Field(() => [Post])
     posts: Post[];
@@ -161,16 +179,30 @@ export class PostResolver {
         return Post.findOne(id, { relations: ["creator"] });
     }
 
-    @Mutation(() => Post)
+    @Mutation(() => PostResponse)
     @UseMiddleware(isAuth)
     async createPost(
         @Arg("options") options: PostInput,
         @Ctx() { req }: MyContext
-    ): Promise<Post> {
-        return Post.create({
-            ...options,
-            creatorId: req.session.userId
-        }).save();
+    ): Promise<PostResponse> {
+        if (!options.title) {
+            return {
+                errors: [{ field: "title", message: "Title is required" }]
+            };
+        }
+
+        if (!options.text) {
+            return {
+                errors: [{ field: "text", message: "Body is required" }]
+            };
+        }
+
+        return {
+            post: Post.create({
+                ...options,
+                creatorId: req.session.userId
+            }).save()
+        };
     }
 
     @Mutation(() => Post, { nullable: true })
