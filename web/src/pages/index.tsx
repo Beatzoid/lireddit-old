@@ -13,13 +13,13 @@ import NextLink from "next/link";
 
 import { Layout } from "../components/Layout";
 import {
-    useDeletePostMutation,
     useMeQuery,
-    usePostsQuery
+    usePostsQuery,
+    useUpdatePostMutation
 } from "../generated/graphql";
 import { createUrqlClient } from "../utils/createUrqlClient";
 import { UpdootSection } from "../components/UpdootSection";
-import { DeleteIcon } from "@chakra-ui/icons";
+import { EditDeletePostButtons } from "../components/EditDeletePostButtons";
 
 const Index = () => {
     const [variables, setVariables] = useState({
@@ -32,8 +32,7 @@ const Index = () => {
     const [{ data, fetching }] = usePostsQuery({
         variables
     });
-
-    const [, deletePost] = useDeletePostMutation();
+    const [, editPost] = useUpdatePostMutation();
 
     if (!fetching && !data) {
         return <div>Query failed, please try again later</div>;
@@ -72,18 +71,12 @@ const Index = () => {
                                         <Text flex={1} mt={4}>
                                             {p.textSnippet}
                                         </Text>
-                                        {meQueryData?.me?.id ===
-                                        p.creator.id ? (
-                                            <DeleteIcon
-                                                cursor="pointer"
-                                                ml="auto"
-                                                color="red"
-                                                aria-label="Delete Post"
-                                                onClick={() => {
-                                                    deletePost({ id: p.id });
-                                                }}
+                                        <Box ml="auto">
+                                            <EditDeletePostButtons
+                                                id={p.id}
+                                                creatorId={p.creator.id}
                                             />
-                                        ) : null}
+                                        </Box>
                                     </Flex>
                                 </Box>
                             </Flex>
