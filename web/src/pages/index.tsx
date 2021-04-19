@@ -12,7 +12,11 @@ import {
 import NextLink from "next/link";
 
 import { Layout } from "../components/Layout";
-import { useDeletePostMutation, usePostsQuery } from "../generated/graphql";
+import {
+    useDeletePostMutation,
+    useMeQuery,
+    usePostsQuery
+} from "../generated/graphql";
 import { createUrqlClient } from "../utils/createUrqlClient";
 import { UpdootSection } from "../components/UpdootSection";
 import { DeleteIcon } from "@chakra-ui/icons";
@@ -22,6 +26,8 @@ const Index = () => {
         limit: 15,
         cursor: null as string | null
     });
+
+    const [{ data: meQueryData }] = useMeQuery();
 
     const [{ data, fetching }] = usePostsQuery({
         variables
@@ -66,15 +72,18 @@ const Index = () => {
                                         <Text flex={1} mt={4}>
                                             {p.textSnippet}
                                         </Text>
-                                        <DeleteIcon
-                                            cursor="pointer"
-                                            ml="auto"
-                                            color="red"
-                                            aria-label="Delete Post"
-                                            onClick={() => {
-                                                deletePost({ id: p.id });
-                                            }}
-                                        />
+                                        {meQueryData?.me?.id ===
+                                        p.creator.id ? (
+                                            <DeleteIcon
+                                                cursor="pointer"
+                                                ml="auto"
+                                                color="red"
+                                                aria-label="Delete Post"
+                                                onClick={() => {
+                                                    deletePost({ id: p.id });
+                                                }}
+                                            />
+                                        ) : null}
                                     </Flex>
                                 </Box>
                             </Flex>
