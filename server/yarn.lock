@@ -1544,6 +1544,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "dotenv@npm:9.0.0"
+  checksum: e7fd61a6393c2abd47d97a767556d949f78fd50a2811fb6f63c0427695f135881e3603956c0abe6330c1a1a6996ea4c992a5a86dd95d4edd70189c792e331c9f
+  languageName: node
+  linkType: hard
+
 "duplexer3@npm:^0.1.4":
   version: 0.1.4
   resolution: "duplexer3@npm:0.1.4"
@@ -2574,7 +2581,7 @@ fsevents@~2.3.1:
     argon2: ^0.27.2
     connect-redis: ^5.1.0
     cors: ^2.8.5
-    dotenv: ^8.2.0
+    dotenv: ^9.0.0
     express: ^4.17.1
     express-session: ^1.17.1
     graphql: ^15.5.0
