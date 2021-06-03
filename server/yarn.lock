@@ -921,15 +921,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"argon2@npm:^0.27.2":
-  version: 0.27.2
-  resolution: "argon2@npm:0.27.2"
+"argon2@npm:^0.28.0":
+  version: 0.28.1
+  resolution: "argon2@npm:0.28.1"
   dependencies:
     "@mapbox/node-pre-gyp": ^1.0.1
     "@phc/format": ^1.0.0
     node-addon-api: ^3.0.2
     opencollective-postinstall: ^2.0.3
-  checksum: 5120afb531241ef152d181dac585a9e2de348d6ef744fe7cfd2f3297c4fd77b5d0448e82111ac6a2d902559a92cafcb935233a41c27fb2055e9a1a35a5776a64
+  checksum: 3fd52a1fb554664e9c8e90232a968e7a735b6e3b69b9f02b920f144036fa28bdadd35ca8eb0903e4f86da83be7ba3b14846d51270615922a89b635e30ee7b73f
   languageName: node
   linkType: hard
 
@@ -2606,7 +2606,7 @@ fsevents@~2.3.1:
     "@types/redis": ^2.8.28
     "@types/uuid": ^8.3.0
     apollo-server-express: ^2.22.2
-    argon2: ^0.27.2
+    argon2: ^0.28.0
     connect-redis: ^6.0.0
     cors: ^2.8.5
     dotenv: ^10.0.0
