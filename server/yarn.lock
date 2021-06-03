@@ -1331,10 +1331,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"connect-redis@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "connect-redis@npm:5.1.0"
-  checksum: ad23f90577478136c3a2076eae2b391ba71287d2c68b70eece39108557bf502e5a2b0a9338c2986f19ae3149735523a3999c11657bdd553399e942a98506d519
+"connect-redis@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "connect-redis@npm:6.0.0"
+  checksum: 3ee09943274cc877287b253a68e0a4f516ac21f6508e14cadf021d58b5c98feca351eea451a800757b2c8835e12a39166cb36a50eb683bb4604f40f48713f3cc
   languageName: node
   linkType: hard
 
@@ -2607,7 +2607,7 @@ fsevents@~2.3.1:
     "@types/uuid": ^8.3.0
     apollo-server-express: ^2.22.2
     argon2: ^0.27.2
-    connect-redis: ^5.1.0
+    connect-redis: ^6.0.0
     cors: ^2.8.5
     dotenv: ^10.0.0
     express: ^4.17.1
