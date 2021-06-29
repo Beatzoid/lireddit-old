@@ -55,6 +55,7 @@ const EditPost = ({}) => {
                                 name="text"
                                 placeholder="Text..."
                                 label="Body"
+                                resize="none"
                             />
                         </Box>
                         <Button

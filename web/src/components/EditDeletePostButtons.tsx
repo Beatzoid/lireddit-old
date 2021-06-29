@@ -1,4 +1,5 @@
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
+import { IconButton } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 import NextLink from "next/link";
 
@@ -14,7 +15,7 @@ export const EditDeletePostButtons: React.FC<EditDeletePostButtonsProps> = ({
     creatorId
 }) => {
     const [{ data }] = useMeQuery();
-    const [, deletePost] = useDeletePostMutation();
+    const [{ fetching }, deletePost] = useDeletePostMutation();
 
     if (data?.me?.id !== creatorId) {
         return null;
@@ -22,11 +23,13 @@ export const EditDeletePostButtons: React.FC<EditDeletePostButtonsProps> = ({
 
     return (
         <Box mt={8}>
-            <DeleteIcon
+            <IconButton
                 mr={4}
+                icon={<DeleteIcon />}
                 cursor="pointer"
                 color="red"
                 aria-label="Delete Post"
+                isLoading={fetching}
                 onClick={() => {
                     deletePost({
                         id: id
@@ -34,7 +37,11 @@ export const EditDeletePostButtons: React.FC<EditDeletePostButtonsProps> = ({
                 }}
             />
             <NextLink href="/post/edit/[id]" as={`/post/edit/${id}`}>
-                <EditIcon cursor="pointer" aria-label="Edit Post" />
+                <IconButton
+                    icon={<EditIcon />}
+                    cursor="pointer"
+                    aria-label="Edit Post"
+                />
             </NextLink>
         </Box>
     );
