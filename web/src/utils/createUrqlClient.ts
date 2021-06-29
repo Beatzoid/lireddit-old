@@ -16,18 +16,20 @@ import {
 import { betterUpdateQuery } from "./betterUpdateQuery";
 import { isServer } from "./isServer";
 
-const errorExchange: Exchange = ({ forward }) => (ops$) => {
-    return pipe(
-        forward(ops$),
-        tap(({ error }) => {
-            if (error) {
-                if (error?.message.includes("Not authenticated")) {
-                    Router.replace("/login");
+const errorExchange: Exchange =
+    ({ forward }) =>
+    (ops$) => {
+        return pipe(
+            forward(ops$),
+            tap(({ error }) => {
+                if (error) {
+                    if (error?.message.includes("Not authenticated")) {
+                        Router.replace("/login");
+                    }
                 }
-            }
-        })
-    );
-};
+            })
+        );
+    };
 
 const cursorPagination = (): Resolver => {
     return (_parent, fieldArgs, cache, info) => {
@@ -71,7 +73,7 @@ const cursorPagination = (): Resolver => {
 export const createUrqlClient = (ssrExchange: any, ctx: any) => {
     let cookie = "";
     if (isServer()) {
-        cookie = ctx.req.headers.cookie;
+        cookie = ctx?.req?.headers?.cookie;
     }
 
     return {
@@ -100,10 +102,8 @@ export const createUrqlClient = (ssrExchange: any, ctx: any) => {
                             });
                         },
                         vote: (_result, args, cache, __) => {
-                            const {
-                                postId,
-                                value
-                            } = args as VoteMutationVariables;
+                            const { postId, value } =
+                                args as VoteMutationVariables;
                             const data = cache.readFragment(
                                 gql`
                                     fragment _ on Post {
