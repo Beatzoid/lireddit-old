@@ -285,5 +285,6 @@ export class FakePosts1618601663725 implements MigrationInterface {
         `);
     }
 
-    public async down(_: QueryRunner): Promise<void> {}
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    public async down(): Promise<void> {}
 }

@@ -2,26 +2,16 @@
     "name": "lireddit",
     "version": "1.0.0",
     "description": "The backend for Lireddit",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
         "watch": "tsc -w",
+        "lint": "eslint --ext .js,.ts .",
         "dev": "nodemon dist/index.js",
-        "start": "node dist/index.js"
+        "start": "node dist/index.js",
+        "build": "yarn lint && tsc"
     },
     "author": "Beatzoid",
     "license": "MIT",
-    "devDependencies": {
-        "@types/connect-redis": "^0.0.16",
-        "@types/cors": "^2.8.10",
-        "@types/express": "^4.17.12",
-        "@types/express-session": "^1.17.3",
-        "@types/node": "^15.12.5",
-        "@types/nodemailer": "^6.4.2",
-        "@types/redis": "^2.8.30",
-        "@types/uuid": "^8.3.0",
-        "nodemon": "^2.0.8",
-        "typescript": "^4.3.4"
-    },
     "dependencies": {
         "apollo-server-express": "^2.25.2",
         "argon2": "^0.28.2",
@@ -39,6 +29,23 @@
         "type-graphql": "^1.1.1",
         "typeorm": "^0.2.34",
         "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@types/connect-redis": "^0.0.16",
+        "@types/cors": "^2.8.10",
+        "@types/express": "^4.17.12",
+        "@types/express-session": "^1.17.3",
+        "@types/node": "^15.12.5",
+        "@types/nodemailer": "^6.4.2",
+        "@types/redis": "^2.8.30",
+        "@types/uuid": "^8.3.0",
+        "@typescript-eslint/eslint-plugin": "^4.28.0",
+        "@typescript-eslint/parser": "^4.28.0",
+        "eslint": "^7.29.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-plugin-import": "^2.23.4",
+        "nodemon": "^2.0.8",
+        "typescript": "^4.3.4"
     },
     "mikro-orm": {
         "useTsNode": true,

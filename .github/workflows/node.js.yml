@@ -29,7 +29,7 @@ jobs:
               run: cd server && yarn install
 
             - name: Compile Server Typescript
-              run: cd server && tsc
+              run: cd server && yarn build
 
             - name: Install Client Dependencies
               run: cd web && yarn install

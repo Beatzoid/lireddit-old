@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { isAuth } from "../middleware/isAuth";
 import { MyContext } from "../types";
 import {
@@ -134,7 +135,7 @@ export class PostResolver {
         @Ctx() { req }: MyContext
     ): Promise<PaginatedPosts> {
         const realLimit = Math.min(50, limit);
-        const replacements: any[] = [realLimit + 1];
+        const replacements: unknown[] = [realLimit + 1];
 
         if (req.session.userId) {
             replacements.push(req.session.userId);
