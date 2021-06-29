@@ -12,9 +12,7 @@ import {
 import NextLink from "next/link";
 
 import { Layout } from "../components/Layout";
-import {
-    usePostsQuery
-} from "../generated/graphql";
+import { usePostsQuery } from "../generated/graphql";
 import { createUrqlClient } from "../utils/createUrqlClient";
 import { UpdootSection } from "../components/UpdootSection";
 import { EditDeletePostButtons } from "../components/EditDeletePostButtons";
@@ -25,12 +23,19 @@ const Index = () => {
         cursor: null as string | null
     });
 
-    const [{ data, fetching }] = usePostsQuery({
+    const [{ data, error, fetching }] = usePostsQuery({
         variables
     });
 
     if (!fetching && !data) {
-        return <div>Query failed, please try again later</div>;
+        return (
+            <div>
+                <div>Query failed, please try again later</div>
+                <div>
+                    {process.env.NODE_ENV !== "production" && error?.message}
+                </div>
+            </div>
+        );
     }
 
     return (
@@ -85,10 +90,9 @@ const Index = () => {
                         onClick={() => {
                             setVariables({
                                 limit: variables.limit,
-                                cursor:
-                                    data.posts.posts[
-                                        data.posts.posts.length - 1
-                                    ].createdAt
+                                cursor: data.posts.posts[
+                                    data.posts.posts.length - 1
+                                ].createdAt
                             });
                         }}
                         isLoading={fetching}

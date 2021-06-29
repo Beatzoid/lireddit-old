@@ -1744,6 +1744,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dataloader@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "dataloader@npm:2.0.0"
+  checksum: 0165c2e80751d269c33d2a14b0078a4f3853cb010e2531e7aa99523aba8d0cdc922b9ad67e4c2bb9074c90e0ee0a41b6e7f5f63c40d31224a71c8a0b703f4be3
+  languageName: node
+  linkType: hard
+
 "debug@npm:2.6.9, debug@npm:^2.2.0, debug@npm:^2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -3440,6 +3447,7 @@ fsevents@~2.3.1:
     argon2: ^0.28.2
     connect-redis: ^6.0.0
     cors: ^2.8.5
+    dataloader: ^2.0.0
     dotenv: ^10.0.0
     eslint: ^7.29.0
     eslint-config-google: ^0.14.0
