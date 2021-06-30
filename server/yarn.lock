@@ -657,7 +657,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^4.28.0":
+"@typescript-eslint/eslint-plugin@npm:^4.28.1":
   version: 4.28.1
   resolution: "@typescript-eslint/eslint-plugin@npm:4.28.1"
   dependencies:
@@ -694,7 +694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.28.0":
+"@typescript-eslint/parser@npm:^4.28.1":
   version: 4.28.1
   resolution: "@typescript-eslint/parser@npm:4.28.1"
   dependencies:
@@ -3441,8 +3441,8 @@ fsevents@~2.3.1:
     "@types/nodemailer": ^6.4.2
     "@types/redis": ^2.8.30
     "@types/uuid": ^8.3.0
-    "@typescript-eslint/eslint-plugin": ^4.28.0
-    "@typescript-eslint/parser": ^4.28.0
+    "@typescript-eslint/eslint-plugin": ^4.28.1
+    "@typescript-eslint/parser": ^4.28.1
     apollo-server-express: ^2.25.2
     argon2: ^0.28.2
     connect-redis: ^6.0.0
