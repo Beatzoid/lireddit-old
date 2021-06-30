@@ -1,5 +1,5 @@
 import { dedupExchange, fetchExchange, gql, stringifyVariables } from "urql";
-import { cacheExchange, Resolver } from "@urql/exchange-graphcache";
+import { cacheExchange, Resolver, Cache } from "@urql/exchange-graphcache";
 import { pipe, tap } from "wonka";
 import { Exchange } from "urql";
 import Router from "next/router";
@@ -70,6 +70,14 @@ const cursorPagination = (): Resolver => {
     };
 };
 
+const invalidateAllPosts = (cache: Cache) => {
+    const allFields = cache.inspectFields("Query");
+    const fieldInfos = allFields.filter((info) => info.fieldName === "posts");
+    fieldInfos.forEach((fi) => {
+        cache.invalidate("Query", "posts", fi.arguments || {});
+    });
+};
+
 export const createUrqlClient = (ssrExchange: any, ctx: any) => {
     let cookie = "";
     if (isServer()) {
@@ -95,13 +103,13 @@ export const createUrqlClient = (ssrExchange: any, ctx: any) => {
                 },
                 updates: {
                     Mutation: {
-                        deletePost: (_result, args, cache, __) => {
+                        deletePost: (_, args, cache, __) => {
                             cache.invalidate({
                                 __typename: "Post",
                                 id: (args as DeletePostMutationVariables).id
                             });
                         },
-                        vote: (_result, args, cache, __) => {
+                        vote: (_, args, cache, __) => {
                             const { postId, value } =
                                 args as VoteMutationVariables;
                             const data = cache.readFragment(
@@ -136,20 +144,10 @@ export const createUrqlClient = (ssrExchange: any, ctx: any) => {
                                 );
                             }
                         },
-                        createPost: (_result, _, cache, __) => {
-                            const allFields = cache.inspectFields("Query");
-                            const fieldInfos = allFields.filter(
-                                (info) => info.fieldName === "posts"
-                            );
-                            fieldInfos.forEach((fi) => {
-                                cache.invalidate(
-                                    "Query",
-                                    "posts",
-                                    fi.arguments || {}
-                                );
-                            });
+                        createPost: (_, __, cache, ___) => {
+                            invalidateAllPosts(cache);
                         },
-                        logout: (_result, _, cache, __) => {
+                        logout: (_result, __, cache, ___) => {
                             betterUpdateQuery<LogoutMutation, MeQuery>(
                                 cache,
                                 { query: MeDocument },
@@ -157,7 +155,7 @@ export const createUrqlClient = (ssrExchange: any, ctx: any) => {
                                 () => ({ me: null })
                             );
                         },
-                        login: (_result, _, cache, __) => {
+                        login: (_result, __, cache, ___) => {
                             betterUpdateQuery<LoginMutation, MeQuery>(
                                 cache,
                                 { query: MeDocument },
@@ -172,6 +170,7 @@ export const createUrqlClient = (ssrExchange: any, ctx: any) => {
                                     }
                                 }
                             );
+                            invalidateAllPosts(cache);
                         },
                         register: (_result, _, cache, __) => {
                             betterUpdateQuery<RegisterMutation, MeQuery>(
