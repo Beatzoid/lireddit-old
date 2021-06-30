@@ -1,4 +1,4 @@
-import "dotenv/config";
+import "dotenv-safe/config";
 
 import "reflect-metadata";
 import express from "express";
@@ -29,22 +29,21 @@ import { createUpdootLoader } from "./utils/loaders/createUpdootLoader";
 const main = async () => {
     const conn = await createConnection({
         type: "postgres",
-        database: "lireddit2",
-        username: "beatzoid",
-        password: "beatzoid",
+        url: process.env.DATABASE_URL,
         logging: !__PROD__,
-        synchronize: true,
+        synchronize: !__PROD__,
         migrations: [path.join(__dirname, "./migrations/*")],
         entities: [Post, User, Updoot]
     });
     await conn.runMigrations();
 
     const app = express();
+    app.set("proxy", 1);
 
     const RedisStore = connectRedis(session);
-    const redis = new Redis();
+    const redis = new Redis(process.env.REDIS_URL);
 
-    app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+    app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
 
     app.use(
         session({
@@ -58,9 +57,10 @@ const main = async () => {
                 httpOnly: true, // Cannot access cookie in the JS frontend
                 sameSite: "lax", // CSRF
                 secure: __PROD__ // Cookie only works in https
+                // domain: __PROD__ ? "" : undefined
             },
             saveUninitialized: false,
-            secret: process.env.COOKIE_SECRET as string,
+            secret: process.env.COOKIE_SECRET,
             resave: false
         })
     );
@@ -84,7 +84,7 @@ const main = async () => {
         cors: false
     });
 
-    app.listen(4000, () =>
+    app.listen(parseInt(process.env.PORT), () =>
         console.log("Server listening on http://localhost:4000")
     );
 };

@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { SessionData, Session } from "express-session";
 import { Redis } from "ioredis";
-import { createUpdootLoader } from "./utils/loaders/createUpdootLoader";
-import { createUserLoader } from "./utils/loaders/createUserLoader";
+import { createUpdootLoader } from "../utils/loaders/createUpdootLoader";
+import { createUserLoader } from "../utils/loaders/createUserLoader";
 
 export type MyContext = {
     req: Request & {

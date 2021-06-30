@@ -13,7 +13,7 @@ import argon2 from "argon2";
 import { v4 } from "uuid";
 
 import { User } from "../entities/User";
-import { MyContext } from "../types";
+import { MyContext } from "../types/types";
 import { COOKIE_NAME, EMAIL_REGEX, FORGOT_PASSWORD_PREFIX } from "../constants";
 import { UsernamePasswordInput } from "../utils/UsernamePasswordInput";
 import { validateRegister } from "../utils/validateRegister";
@@ -131,7 +131,7 @@ export class UserResolver {
         await sendEmail(
             email,
             "Reset Lireddit Account Password",
-            `<a href="http://localhost:3000/change-password/${token}">Reset Password</a>`
+            `<a href="${process.env.CORS_ORIGIN}/change-password/${token}">Reset Password</a>`
         );
         return true;
     }

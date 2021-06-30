@@ -1,6 +1,6 @@
 /* eslint-disable quotes */
 import { isAuth } from "../middleware/isAuth";
-import { MyContext } from "../types";
+import { MyContext } from "../types/types";
 import {
     Arg,
     Ctx,
