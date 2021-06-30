@@ -3459,7 +3459,7 @@ fsevents@~2.3.1:
     graphql: ^15.5.1
     ioredis: ^4.27.6
     nodemailer: ^6.6.2
-    nodemon: ^2.0.8
+    nodemon: ^2.0.9
     pg: ^8.6.0
     reflect-metadata: ^0.1.13
     ts-node: ^10.0.0
@@ -3878,9 +3878,9 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"nodemon@npm:^2.0.8":
-  version: 2.0.8
-  resolution: "nodemon@npm:2.0.8"
+"nodemon@npm:^2.0.9":
+  version: 2.0.9
+  resolution: "nodemon@npm:2.0.9"
   dependencies:
     chokidar: ^3.2.2
     debug: ^3.2.6
@@ -3894,7 +3894,7 @@ fsevents@~2.3.1:
     update-notifier: ^4.1.0
   bin:
     nodemon: bin/nodemon.js
-  checksum: 4eb57aac4f2590fbf005fb7c8456109b7b6065172ad8161e43f2538a711536507799c342a081f3a3b0e3f5c2d397b84f08252c0105e92aecc6ff8f09be0784c1
+  checksum: bed92265bba3ed750b6d064bdf4f93d4a952948c24379e824f568bc48c336390d394c130aef32206d1cd8aa4d32395052326834a42ed11a8596b94b5a01ed1a8
   languageName: node
   linkType: hard
 
