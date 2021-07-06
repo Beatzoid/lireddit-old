@@ -420,12 +420,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express-session@npm:*, @types/express-session@npm:^1.17.3":
+"@types/express-session@npm:*":
   version: 1.17.3
   resolution: "@types/express-session@npm:1.17.3"
   dependencies:
     "@types/express": "*"
   checksum: 4ec0442aaba90400ac308849418d49d390d510f34e7164212966a6530a93d3e7aef1b46672a13c8a54945ce17547b4dcba6ebc9263446c0f8ce245df4bbc705e
+  languageName: node
+  linkType: hard
+
+"@types/express-session@npm:^1.17.4":
+  version: 1.17.4
+  resolution: "@types/express-session@npm:1.17.4"
+  dependencies:
+    "@types/express": "*"
+  checksum: 0763b30a819c139e700e813c6f51dd9238d1f13e56dea1cb5a029c33a422a524e6fac34537ebc1f0514c031e1eadfe3ee17a034f425cc2b4b4f4cd4d99e8508b
   languageName: node
   linkType: hard
 
@@ -3476,7 +3485,7 @@ fsevents@~2.3.1:
     "@types/connect-redis": ^0.0.17
     "@types/cors": ^2.8.11
     "@types/express": ^4.17.13
-    "@types/express-session": ^1.17.3
+    "@types/express-session": ^1.17.4
     "@types/node": ^15.12.5
     "@types/nodemailer": ^6.4.2
     "@types/redis": ^2.8.30
