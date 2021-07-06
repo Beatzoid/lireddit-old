@@ -344,15 +344,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/connect-redis@npm:^0.0.16":
-  version: 0.0.16
-  resolution: "@types/connect-redis@npm:0.0.16"
+"@types/connect-redis@npm:^0.0.17":
+  version: 0.0.17
+  resolution: "@types/connect-redis@npm:0.0.17"
   dependencies:
     "@types/express": "*"
     "@types/express-session": "*"
     "@types/ioredis": "*"
     "@types/redis": "*"
-  checksum: 02e126cc324164b443e4dee9b7c8538f8ad8b431eb55928e5b13ca3cba8c93a63cd14313e63b13de009e5edf371cbb116dfc754bf4b13b51bd2f3ef9db8be7ef
+  checksum: ef3ba9931743abab930f390b59c9e6b1c98dba1326d4a146ac2a0305d0cba1a532ee9b9ded51242bbf4e9c2829389b0c8573d5e0e07bf1519257bb5936eadfa2
   languageName: node
   linkType: hard
 
@@ -3454,7 +3454,7 @@ fsevents@~2.3.1:
   version: 0.0.0-use.local
   resolution: "lireddit@workspace:."
   dependencies:
-    "@types/connect-redis": ^0.0.16
+    "@types/connect-redis": ^0.0.17
     "@types/cors": ^2.8.10
     "@types/express": ^4.17.12
     "@types/express-session": ^1.17.3
