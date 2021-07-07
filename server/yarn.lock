@@ -613,12 +613,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/nodemailer@npm:^6.4.2":
-  version: 6.4.2
-  resolution: "@types/nodemailer@npm:6.4.2"
+"@types/nodemailer@npm:^6.4.3":
+  version: 6.4.3
+  resolution: "@types/nodemailer@npm:6.4.3"
   dependencies:
     "@types/node": "*"
-  checksum: 35858e7ab0a9d88b849632108fab350165be0f3985c0d53c3ebce700ef8d90b8a08f5f361c1513986c58d41531f5b8c19430e8c4c853d4c37cef390e109564f8
+  checksum: 9d9b243ace7609d949d217bc8c30bce497e718a058580911245e480f0b96a7f281ba9b3affb2a5ab20df008d2f764c95a2cafef35333aedcdd704abe23c65177
   languageName: node
   linkType: hard
 
@@ -3487,7 +3487,7 @@ fsevents@~2.3.1:
     "@types/express": ^4.17.13
     "@types/express-session": ^1.17.4
     "@types/node": ^15.12.5
-    "@types/nodemailer": ^6.4.2
+    "@types/nodemailer": ^6.4.3
     "@types/redis": ^2.8.30
     "@types/uuid": ^8.3.1
     "@typescript-eslint/eslint-plugin": ^4.28.2
