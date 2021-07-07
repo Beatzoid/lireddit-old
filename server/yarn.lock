@@ -645,12 +645,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/redis@npm:^2.8.30":
-  version: 2.8.30
-  resolution: "@types/redis@npm:2.8.30"
+"@types/redis@npm:^2.8.31":
+  version: 2.8.31
+  resolution: "@types/redis@npm:2.8.31"
   dependencies:
     "@types/node": "*"
-  checksum: c12a5eafae160c7b8c665f8cb91cb8be971612a3b4e8b021c3c27f3bd180045673d876998327670a62b0afb6b7e436b1d92a64cf135994099da4775a7ca5fd04
+  checksum: 01b66179f334b6daef7a4ae2d84046ff65ed50b09eeaeefb96286bda14f5bb5c4f9676526c321d76c33ede63614a394dfa84b80c3e666138db3c4404009c63ee
   languageName: node
   linkType: hard
 
@@ -3488,7 +3488,7 @@ fsevents@~2.3.1:
     "@types/express-session": ^1.17.4
     "@types/node": ^15.12.5
     "@types/nodemailer": ^6.4.3
-    "@types/redis": ^2.8.30
+    "@types/redis": ^2.8.31
     "@types/uuid": ^8.3.1
     "@typescript-eslint/eslint-plugin": ^4.28.2
     "@typescript-eslint/parser": ^4.28.2
