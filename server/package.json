@@ -26,7 +26,7 @@
         "nodemailer": "^6.6.2",
         "pg": "^8.6.0",
         "reflect-metadata": "^0.1.13",
-        "ts-node": "^10.0.0",
+        "ts-node": "^10.1.0",
         "type-graphql": "^1.1.1",
         "typeorm": "^0.2.34",
         "uuid": "^8.3.2"
