@@ -3505,7 +3505,7 @@ fsevents@~2.3.1:
     express-session: ^1.17.2
     graphql: ^15.5.1
     ioredis: ^4.27.6
-    nodemailer: ^6.6.2
+    nodemailer: ^6.6.3
     nodemon: ^2.0.12
     pg: ^8.6.0
     reflect-metadata: ^0.1.13
@@ -3918,10 +3918,10 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^6.6.2":
-  version: 6.6.2
-  resolution: "nodemailer@npm:6.6.2"
-  checksum: 5d15ce2116938cae59ca089b88b13506440d9aa1e06b670a2addb48b0c5b86aa05523e4d20321cb1ca5e441e726ec3563e5d850f3c5af4347bf89eb19ee5ec7f
+"nodemailer@npm:^6.6.3":
+  version: 6.6.3
+  resolution: "nodemailer@npm:6.6.3"
+  checksum: abcdcbc80279d6200ded778765046ce64210d901953d3ec7caaaa45ae44401d8c41cf3651b6d6cfaadf945a492e815f4c8a062bdf31214bd98417a090f530830
   languageName: node
   linkType: hard
 
