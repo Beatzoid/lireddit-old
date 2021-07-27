@@ -3507,7 +3507,7 @@ fsevents@~2.3.1:
     ioredis: ^4.27.6
     nodemailer: ^6.6.3
     nodemon: ^2.0.12
-    pg: ^8.6.0
+    pg: ^8.7.0
     reflect-metadata: ^0.1.13
     ts-node: ^10.1.0
     type-graphql: ^1.1.1
@@ -4317,12 +4317,12 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"pg-pool@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "pg-pool@npm:3.3.0"
+"pg-pool@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "pg-pool@npm:3.4.0"
   peerDependencies:
     pg: ">=8.0"
-  checksum: 25f528a9b72ebe00678bbafe8a196e95c73b6843388619a8fda30878044b45b38ffbaaf69e485354d73c7452ac81f62ea6aa9705014855b60d71f6ef256cfe45
+  checksum: c05e6fa2a33b2be1ae817eb5b9bc43f97f3c6a166597786c29bc9910a33c67c5847c68752898dc9b1f5b71846569a2f5b9a5c83e9ad6d759a1c4f70121fa3a8c
   languageName: node
   linkType: hard
 
@@ -4346,14 +4346,14 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"pg@npm:^8.6.0":
-  version: 8.6.0
-  resolution: "pg@npm:8.6.0"
+"pg@npm:^8.7.0":
+  version: 8.7.0
+  resolution: "pg@npm:8.7.0"
   dependencies:
     buffer-writer: 2.0.0
     packet-reader: 1.0.0
     pg-connection-string: ^2.5.0
-    pg-pool: ^3.3.0
+    pg-pool: ^3.4.0
     pg-protocol: ^1.5.0
     pg-types: ^2.1.0
     pgpass: 1.x
@@ -4362,7 +4362,7 @@ fsevents@~2.3.1:
   peerDependenciesMeta:
     pg-native:
       optional: true
-  checksum: 06bec69854081161b3563f2bc0a3b09a20ebbff87e137914816de0970d70a0a4b282917434783f99841ec650a0650c0919fade96cb25e636d1b4a0cebb672922
+  checksum: a81ce5e4e04e2618f99545abff572452e2f29248944ea2c486814de909d17bf47a7642a6584a463163a175fedb6fdc69eae1395b2e93165f45e47eeecb877fa2
   languageName: node
   linkType: hard
 
