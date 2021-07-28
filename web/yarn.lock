@@ -1704,9 +1704,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/cli@npm:1.21.7":
-  version: 1.21.7
-  resolution: "@graphql-codegen/cli@npm:1.21.7"
+"@graphql-codegen/cli@npm:1.21.8":
+  version: 1.21.8
+  resolution: "@graphql-codegen/cli@npm:1.21.8"
   dependencies:
     "@graphql-codegen/core": 1.17.10
     "@graphql-codegen/plugin-helpers": ^1.18.8
@@ -1717,7 +1717,7 @@ __metadata:
     "@graphql-tools/graphql-file-loader": ^6.2.7
     "@graphql-tools/json-file-loader": ^6.2.6
     "@graphql-tools/load": ^6.2.8
-    "@graphql-tools/prisma-loader": ^6.3.0
+    "@graphql-tools/prisma-loader": 6.3.0
     "@graphql-tools/url-loader": ^6.10.1
     "@graphql-tools/utils": ^7.9.1
     ansi-escapes: ^4.3.1
@@ -1753,7 +1753,7 @@ __metadata:
     gql-gen: bin.js
     graphql-code-generator: bin.js
     graphql-codegen: bin.js
-  checksum: 63f4772e3610b6b42cbaea6ef1fedec121f99591dfb3dd052a0b330d7dff5db7779fe846a7580e2f4ea90ee661c9490993276e71ff8de91fa53abc892959e976
+  checksum: ae34e65a0f95795946d899b7ff4f70218e8ed623f56dfa9cbd06b32f7f0604cc36a05efe318ca7f265ef76df544d5bd581b69c5f43146b1d84147cd2640d49e4
   languageName: node
   linkType: hard
 
@@ -2058,7 +2058,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/prisma-loader@npm:^6.3.0":
+"@graphql-tools/prisma-loader@npm:6.3.0":
   version: 6.3.0
   resolution: "@graphql-tools/prisma-loader@npm:6.3.0"
   dependencies:
@@ -9841,7 +9841,7 @@ typescript@^4.3.5:
     "@chakra-ui/react": ^1.6.5
     "@emotion/react": ^11.4.0
     "@emotion/styled": ^11.3.0
-    "@graphql-codegen/cli": 1.21.7
+    "@graphql-codegen/cli": 1.21.8
     "@graphql-codegen/typescript": 1.23.0
     "@graphql-codegen/typescript-operations": 1.18.4
     "@graphql-codegen/typescript-urql": ^2.0.11
