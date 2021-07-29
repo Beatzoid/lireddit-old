@@ -1437,7 +1437,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-highlight@npm:^2.1.10":
+"cli-highlight@npm:^2.1.11":
   version: 2.1.11
   resolution: "cli-highlight@npm:2.1.11"
   dependencies:
@@ -3295,7 +3295,7 @@ fsevents@~2.3.1:
     reflect-metadata: ^0.1.13
     ts-node: ^10.1.0
     type-graphql: ^1.1.1
-    typeorm: ^0.2.34
+    typeorm: ^0.2.35
     typescript: ^4.3.5
     uuid: ^8.3.2
   languageName: unknown
@@ -5279,15 +5279,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"typeorm@npm:^0.2.34":
-  version: 0.2.34
-  resolution: "typeorm@npm:0.2.34"
+"typeorm@npm:^0.2.35":
+  version: 0.2.35
+  resolution: "typeorm@npm:0.2.35"
   dependencies:
     "@sqltools/formatter": ^1.2.2
     app-root-path: ^3.0.0
     buffer: ^6.0.3
     chalk: ^4.1.0
-    cli-highlight: ^2.1.10
+    cli-highlight: ^2.1.11
     debug: ^4.3.1
     dotenv: ^8.2.0
     glob: ^7.1.6
@@ -5300,9 +5300,56 @@ fsevents@~2.3.1:
     yargonaut: ^1.1.4
     yargs: ^16.2.0
     zen-observable-ts: ^1.0.0
+  peerDependencies:
+    "@sap/hana-client": "*"
+    better-sqlite3: "*"
+    hdb-pool: "*"
+    ioredis: "*"
+    mongodb: ^3.6.0
+    mssql: "*"
+    mysql2: "*"
+    oracledb: "*"
+    pg: "*"
+    pg-native: "*"
+    pg-query-stream: "*"
+    redis: "*"
+    sql.js: "*"
+    sqlite3: "*"
+    typeorm-aurora-data-api-driver: "*"
+  peerDependenciesMeta:
+    "@sap/hana-client":
+      optional: true
+    better-sqlite3:
+      optional: true
+    hdb-pool:
+      optional: true
+    ioredis:
+      optional: true
+    mongodb:
+      optional: true
+    mssql:
+      optional: true
+    mysql2:
+      optional: true
+    oracledb:
+      optional: true
+    pg:
+      optional: true
+    pg-native:
+      optional: true
+    pg-query-stream:
+      optional: true
+    redis:
+      optional: true
+    sql.js:
+      optional: true
+    sqlite3:
+      optional: true
+    typeorm-aurora-data-api-driver:
+      optional: true
   bin:
     typeorm: cli.js
-  checksum: 1bf2488a19fcea08d3f53ecf2ae3877837e83814388cab053ab0e18b58d92e81977d8b0eef6afab155a22911f28aba074ecac7a91c672be3b93f935c4d60d81a
+  checksum: 4179789f700616a5f0730ff13c1e0255ecc13336ef6e24e4f695217a2578d24a783b51348e56ccc7e1d583de6dc70e899831341b1cb242db30a504aba7fc3698
   languageName: node
   linkType: hard
 
