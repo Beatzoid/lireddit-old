@@ -3295,7 +3295,7 @@ fsevents@~2.3.1:
     reflect-metadata: ^0.1.13
     ts-node: ^10.1.0
     type-graphql: ^1.1.1
-    typeorm: ^0.2.35
+    typeorm: ^0.2.36
     typescript: ^4.3.5
     uuid: ^8.3.2
   languageName: unknown
@@ -5279,9 +5279,9 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"typeorm@npm:^0.2.35":
-  version: 0.2.35
-  resolution: "typeorm@npm:0.2.35"
+"typeorm@npm:^0.2.36":
+  version: 0.2.36
+  resolution: "typeorm@npm:0.2.36"
   dependencies:
     "@sqltools/formatter": ^1.2.2
     app-root-path: ^3.0.0
@@ -5298,7 +5298,7 @@ fsevents@~2.3.1:
     tslib: ^2.1.0
     xml2js: ^0.4.23
     yargonaut: ^1.1.4
-    yargs: ^16.2.0
+    yargs: ^17.0.1
     zen-observable-ts: ^1.0.0
   peerDependencies:
     "@sap/hana-client": "*"
@@ -5349,7 +5349,7 @@ fsevents@~2.3.1:
       optional: true
   bin:
     typeorm: cli.js
-  checksum: 4179789f700616a5f0730ff13c1e0255ecc13336ef6e24e4f695217a2578d24a783b51348e56ccc7e1d583de6dc70e899831341b1cb242db30a504aba7fc3698
+  checksum: cfb508891b7779b7be67b30c11dec97995e376ca739e4a655e272695eb3d340ec289cc336196e705198e8ad58e417ead39f75c75ec4ce2d980ef65931975db2d
   languageName: node
   linkType: hard
 
@@ -5684,7 +5684,7 @@ typescript@^4.3.5:
   languageName: node
   linkType: hard
 
-"yargs@npm:^16.0.0, yargs@npm:^16.2.0":
+"yargs@npm:^16.0.0":
   version: 16.2.0
   resolution: "yargs@npm:16.2.0"
   dependencies:
@@ -5696,6 +5696,21 @@ typescript@^4.3.5:
     y18n: ^5.0.5
     yargs-parser: ^20.2.2
   checksum: a79ce1f043021cd645de1ffebb6149541d382ba68f4a6b5eca5d2ad65af51893371bbd78e240dc3b6cf0cbb419511ba5bda715dec992e4266e6863ea49f14feb
+  languageName: node
+  linkType: hard
+
+"yargs@npm:^17.0.1":
+  version: 17.0.1
+  resolution: "yargs@npm:17.0.1"
+  dependencies:
+    cliui: ^7.0.2
+    escalade: ^3.1.1
+    get-caller-file: ^2.0.5
+    require-directory: ^2.1.1
+    string-width: ^4.2.0
+    y18n: ^5.0.5
+    yargs-parser: ^20.2.2
+  checksum: a7969b48d2dea129a7d4fcc3f13e88d4f94bacbd24f720b2ce19946fa9facc42cfed89c059d953091241f4e9e9000ed9dbf86e4bb4b6ceb3a26af10ddebdd0b2
   languageName: node
   linkType: hard
 
