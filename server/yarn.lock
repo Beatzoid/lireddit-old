@@ -3359,7 +3359,7 @@ fsevents@~2.3.1:
     reflect-metadata: ^0.1.13
     ts-node: ^10.2.0
     type-graphql: ^1.1.1
-    typeorm: ^0.2.36
+    typeorm: ^0.2.37
     typescript: ^4.3.5
     uuid: ^8.3.2
   languageName: unknown
@@ -5335,9 +5335,9 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"typeorm@npm:^0.2.36":
-  version: 0.2.36
-  resolution: "typeorm@npm:0.2.36"
+"typeorm@npm:^0.2.37":
+  version: 0.2.37
+  resolution: "typeorm@npm:0.2.37"
   dependencies:
     "@sqltools/formatter": ^1.2.2
     app-root-path: ^3.0.0
@@ -5405,7 +5405,7 @@ fsevents@~2.3.1:
       optional: true
   bin:
     typeorm: cli.js
-  checksum: cfb508891b7779b7be67b30c11dec97995e376ca739e4a655e272695eb3d340ec289cc336196e705198e8ad58e417ead39f75c75ec4ce2d980ef65931975db2d
+  checksum: 5587c1c1bba52b5c38a565cdb3ee427a8ef88c0e3c379745acf1fac043133d4ad95dc0f9f3eeaa64e9d1ed7c57cff188fec3a361fb23ba036d490f6469d9f0f7
   languageName: node
   linkType: hard
 
