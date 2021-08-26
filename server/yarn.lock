@@ -1029,9 +1029,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-server-core@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "apollo-server-core@npm:3.2.0"
+"apollo-server-core@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "apollo-server-core@npm:3.3.0"
   dependencies:
     "@apollographql/apollo-tools": ^0.5.1
     "@apollographql/graphql-playground-html": 1.6.29
@@ -1056,7 +1056,7 @@ __metadata:
     uuid: ^8.0.0
   peerDependencies:
     graphql: ^15.3.0
-  checksum: a2da9ac90404ece787a5806f17864b346fac5a16c166d0a4b3913d1d9d6916fc422cb90245c7f92717f2988294decf7a6c7babf4f8b7889eee6f082772ec870a
+  checksum: 565894a9e7fb15c5589cd7f821806a8eccf0370f9764b3b4acdb251c0c7bbf1fa9aa7dc5d7320e89b9d35776c75007197120e7c0eee9ad103f6bff5e5a01d591
   languageName: node
   linkType: hard
 
@@ -1078,9 +1078,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-server-express@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "apollo-server-express@npm:3.2.0"
+"apollo-server-express@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "apollo-server-express@npm:3.3.0"
   dependencies:
     "@types/accepts": ^1.3.5
     "@types/body-parser": 1.19.1
@@ -1088,7 +1088,7 @@ __metadata:
     "@types/express": 4.17.13
     "@types/express-serve-static-core": 4.17.24
     accepts: ^1.3.5
-    apollo-server-core: ^3.2.0
+    apollo-server-core: ^3.3.0
     apollo-server-types: ^3.2.0
     body-parser: ^1.19.0
     cors: ^2.8.5
@@ -1096,7 +1096,7 @@ __metadata:
   peerDependencies:
     express: ^4.17.1
     graphql: ^15.3.0
-  checksum: c718863d7eec155565e43c0e771e5413c876bc37413880617d9d2a76d2981c1a2264d26c38d488f9f102cf86a36665525d012f9ed0f395ec94b1527ac511062e
+  checksum: 690b79c26f1913ce8ff0aaba7c667a9a1a1e01fdece1d16f870e6ae09d4f062c66687e5d1a9f22d44153cec169bab9bd3d1c6b5e745198db0b19e3e1de828939
   languageName: node
   linkType: hard
 
@@ -3349,7 +3349,7 @@ fsevents@~2.3.1:
     "@types/uuid": ^8.3.1
     "@typescript-eslint/eslint-plugin": ^4.29.3
     "@typescript-eslint/parser": ^4.29.3
-    apollo-server-express: ^3.2.0
+    apollo-server-express: ^3.3.0
     argon2: ^0.28.2
     connect-redis: ^6.0.0
     cors: ^2.8.5
