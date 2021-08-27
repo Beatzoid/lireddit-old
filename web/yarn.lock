@@ -7110,15 +7110,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-urql@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "next-urql@npm:3.2.0"
+"next-urql@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "next-urql@npm:3.2.1"
   dependencies:
     react-ssr-prepass: ^1.4.0
   peerDependencies:
     react: ">=16.8.0"
     urql: ^2.0.0
-  checksum: e6621f0cfcd4ba4013b37d7c20918058dfc44f7d71fc0e11e3077e81cb0411cf3393f36474d9389bdb0df83326024e37dabf8b88c1089290f1b9e74290f7be2c
+  checksum: 7b5b4b64f6b5f0278d5f0f5e71d9c0395f17a72de74f6684ed16dd2c2ea78c4688b2d1924d150c0530e72250614d8afa492c622e5dfee44f1262c2f1c6c0b547
   languageName: node
   linkType: hard
 
@@ -9913,7 +9913,7 @@ typescript@^4.3.5:
     framer-motion: ^4.1.17
     graphql: ^15.5.1
     next: ^11.1.0
-    next-urql: ^3.2.0
+    next-urql: ^3.2.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-is: ^17.0.2
