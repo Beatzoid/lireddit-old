@@ -2734,15 +2734,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@urql/exchange-graphcache@npm:^4.3.1":
-  version: 4.3.1
-  resolution: "@urql/exchange-graphcache@npm:4.3.1"
+"@urql/exchange-graphcache@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "@urql/exchange-graphcache@npm:4.3.2"
   dependencies:
     "@urql/core": ">=2.3.1"
     wonka: ^4.0.14
   peerDependencies:
     graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-  checksum: 13622e39cd25212830021d625a503e0e04ce39ca165dbeeb4b291da8d5cf0bc14b944fdf813a24bededa94d366c5b3a5faeabc30655b13eeb1199d4c26a1a3ef
+  checksum: 3bb585a4a62407a20a6586fb8a76a266b82d0e804fec3f94f84108c41b03a3e86f8312cec416beefd4be3d393148062424c820823e15ddab95550fdb4751d5c2
   languageName: node
   linkType: hard
 
@@ -9904,7 +9904,7 @@ typescript@^4.3.5:
     "@graphql-codegen/typescript": 1.23.0
     "@graphql-codegen/typescript-operations": 1.18.4
     "@graphql-codegen/typescript-urql": ^2.0.11
-    "@urql/exchange-graphcache": ^4.3.1
+    "@urql/exchange-graphcache": ^4.3.2
     eslint: ^7.32.0
     eslint-config-next: ^11.1.0
     eslint-config-prettier: ^8.3.0
