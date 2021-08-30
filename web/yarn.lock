@@ -5560,10 +5560,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:^15.5.1":
-  version: 15.5.1
-  resolution: "graphql@npm:15.5.1"
-  checksum: 509cdc2fc072e7cd1b5a25cf3fe13838d41892b035434f02419c209608f89e323f5234ca7e2bde77e9371e629339cbd8435f1dbc8c250910e4e9ac0babfa6c64
+"graphql@npm:^15.5.2":
+  version: 15.5.2
+  resolution: "graphql@npm:15.5.2"
+  checksum: cc76d066cae03e7f55967b4a612aafc3a2ad78494f3f6912c468b2240752a6643958f96f06d32bea2dacca712f2a315ea8075181a8f06ff68db39bb9ceb66c8f
   languageName: node
   linkType: hard
 
@@ -9939,7 +9939,7 @@ typescript@^4.3.5:
     focus-visible: ^5.2.0
     formik: ^2.2.9
     framer-motion: ^4.1.17
-    graphql: ^15.5.1
+    graphql: ^15.5.2
     next: ^11.1.0
     next-urql: ^3.2.1
     react: ^17.0.2
